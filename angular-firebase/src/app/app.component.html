@@ -1,0 +1,9 @@
+<input type="text" (keyup.enter)="add(data)" #data>
+<h1>Results : </h1>
+<ul>
+  <li *ngFor="let item of items | async">
+    {{item.key}} - {{item.test}}
+    <button (click)="update(item.key, data.value)">edit</button>
+    <button (click)="delete(item.key)">remove</button>
+  </li>
+</ul>
